@@ -35,7 +35,7 @@ public class AnalysisController {
 	 * @return created {@link Analysis}
 	 * @throws IOException 
 	 */
-	@RequestMapping(value="/analysis/new", method=RequestMethod.POST, 
+	@RequestMapping(value="/analyse/new", method=RequestMethod.POST, 
 			consumes=MediaType.APPLICATION_JSON_VALUE, 
 			produces=MediaType.APPLICATION_JSON_VALUE)
 	Analysis newAnalysis(@RequestBody List<String> urls) throws IOException {

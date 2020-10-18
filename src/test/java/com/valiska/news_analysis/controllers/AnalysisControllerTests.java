@@ -48,7 +48,7 @@ class AnalysisControllerTests extends AbstractAnalysisTest{
 		mockServerClientWithFile(client, "classpath:com/valiska/news_analysis/msn_rss.xml", "/msn_news");
         
         webTestClient.post()
-			.uri("/analysis/new")
+			.uri("/analyse/new")
 			.bodyValue(List.of("http://localhost:8787/google_news", "http://localhost:8787/msn_news"))
 			.accept(APPLICATION_JSON)
 			.exchange()
