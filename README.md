@@ -1,3 +1,35 @@
+# Usage
+
+Use Maven to run the example:
+
+```mvn spring-boot:run```
+
+Create new analysis by calling remote API using RSS feed urls e.g.:
+
+```
+curl --location --request POST 'localhost:8080/analyse/new' \
+--header 'Content-Type: application/json' \
+--data-raw '["https://news.google.com/news?cf=all&hl=en&pz=1&ned=us&output=rss", "https://rss.msn.com/en-us", "https://rss.nytimes.com/services/xml/rss/nyt/World.xml", "http://feeds.washingtonpost.com/rss/world", 
+"http://rss.cnn.com/rss/edition.rss"]' | json_pp
+```
+
+or use Postman and set request type to POST, body to JSON and url to 'localhost:8080/analyse/new'
+
+Use the returned id to get analysis results:
+
+```
+curl --location --request GET 'localhost:8080/frequency/{id}' | json_pp
+```
+
+or use Postman and set request type to GET and url to 'localhost:8080/frequency/{id}'
+
+Use Maven to run the tests:
+
+```mvn test```
+
+Tested on Java version "15" 2020-09-15 and Maven version 3.6.3 
+
+
 # Exercise
 
 Implement a hot topic analysis for RSS feeds.
